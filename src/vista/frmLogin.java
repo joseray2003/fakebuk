@@ -53,9 +53,9 @@ public class frmLogin extends javax.swing.JFrame {
         lblPassword = new javax.swing.JLabel();
         separadorPassword = new javax.swing.JSeparator();
         txtPassword = new javax.swing.JPasswordField();
-        pnlEntrar = new org.netbeans.modules.form.InvalidComponent();
+        pnlEntrar = new Clases.PanelRound();
         btnEntrar = new javax.swing.JLabel();
-        pnlSalir = new org.netbeans.modules.form.InvalidComponent();
+        pnlSalir = new Clases.PanelRound();
         btnSalir = new javax.swing.JLabel();
         bgImg = new javax.swing.JLabel();
         Arrastrable = new javax.swing.JPanel();
@@ -179,6 +179,11 @@ public class frmLogin extends javax.swing.JFrame {
         });
         bg.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 250, 40));
 
+        pnlEntrar.setBackground(new java.awt.Color(82, 120, 206));
+        pnlEntrar.setRoundBottomLeft(15);
+        pnlEntrar.setRoundBottomRight(15);
+        pnlEntrar.setRoundTopLeft(15);
+        pnlEntrar.setRoundTopRight(15);
         pnlEntrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEntrar.setFont(new java.awt.Font("Sans Serif Collection", 1, 14)); // NOI18N
@@ -199,9 +204,13 @@ public class frmLogin extends javax.swing.JFrame {
         });
         pnlEntrar.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 40));
 
-        bg.add(pnlEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 120, 40));
+        bg.add(pnlEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 130, 40));
 
-        pnlSalir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlSalir.setBackground(new java.awt.Color(82, 120, 206));
+        pnlSalir.setRoundBottomLeft(15);
+        pnlSalir.setRoundBottomRight(15);
+        pnlSalir.setRoundTopLeft(15);
+        pnlSalir.setRoundTopRight(15);
 
         btnSalir.setFont(new java.awt.Font("Sans Serif Collection", 1, 14)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,9 +228,29 @@ public class frmLogin extends javax.swing.JFrame {
                 btnSalirMouseExited(evt);
             }
         });
-        pnlSalir.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 40));
 
-        bg.add(pnlSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 120, 40));
+        javax.swing.GroupLayout pnlSalirLayout = new javax.swing.GroupLayout(pnlSalir);
+        pnlSalir.setLayout(pnlSalirLayout);
+        pnlSalirLayout.setHorizontalGroup(
+            pnlSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
+            .addGroup(pnlSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlSalirLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        pnlSalirLayout.setVerticalGroup(
+            pnlSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(pnlSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlSalirLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        bg.add(pnlSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 120, 40));
         bg.add(bgImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 480, 480));
 
         Arrastrable.setBackground(new java.awt.Color(255, 255, 255));
@@ -404,8 +433,8 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel logo;
-    private org.netbeans.modules.form.InvalidComponent pnlEntrar;
-    private org.netbeans.modules.form.InvalidComponent pnlSalir;
+    private Clases.PanelRound pnlEntrar;
+    private Clases.PanelRound pnlSalir;
     private javax.swing.JSeparator separadorCorreo;
     private javax.swing.JSeparator separadorPassword;
     private javax.swing.JTextField txtCorreo;
