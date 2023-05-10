@@ -39,12 +39,12 @@ public class frmPublicar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        btnCerrar = new javax.swing.JPanel();
-        x = new javax.swing.JLabel();
         btnConfirmar = new Clases.PanelRound();
         btnConfirm = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         pnlArrastrable = new javax.swing.JPanel();
+        btnCerrar = new javax.swing.JPanel();
+        x = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -52,51 +52,15 @@ public class frmPublicar extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(240, 239, 239));
+        jPanel1.setBackground(new java.awt.Color(239, 239, 239));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 390, 200));
-
-        btnCerrar.setBackground(new java.awt.Color(240, 239, 239));
-        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseExited(evt);
-            }
-        });
-
-        x.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        x.setText("X");
-        x.setMaximumSize(new java.awt.Dimension(19, 19));
-        x.setMinimumSize(new java.awt.Dimension(19, 19));
-        x.setPreferredSize(new java.awt.Dimension(19, 19));
-
-        javax.swing.GroupLayout btnCerrarLayout = new javax.swing.GroupLayout(btnCerrar);
-        btnCerrar.setLayout(btnCerrarLayout);
-        btnCerrarLayout.setHorizontalGroup(
-            btnCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCerrarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(x, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnCerrarLayout.setVerticalGroup(
-            btnCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnCerrarLayout.createSequentialGroup()
-                .addGap(0, 1, Short.MAX_VALUE)
-                .addComponent(x, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 20, 20));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 390, 160));
 
         btnConfirmar.setBackground(new java.awt.Color(82, 120, 206));
         btnConfirmar.setRoundBottomLeft(15);
@@ -131,13 +95,14 @@ public class frmPublicar extends javax.swing.JFrame {
         });
         btnConfirmar.add(btnConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 160, 20));
 
-        jPanel1.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 180, -1));
+        jPanel1.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 180, -1));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setText("Cuentale a todos lo que estas pensando en este momento!");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 20));
 
-        pnlArrastrable.setBackground(new java.awt.Color(240, 239, 239));
+        pnlArrastrable.setBackground(new java.awt.Color(225, 225, 225));
+        pnlArrastrable.setOpaque(false);
         pnlArrastrable.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 pnlArrastrableMouseDragged(evt);
@@ -161,6 +126,43 @@ public class frmPublicar extends javax.swing.JFrame {
         );
 
         jPanel1.add(pnlArrastrable, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 20));
+
+        btnCerrar.setBackground(new java.awt.Color(239, 239, 239));
+        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseExited(evt);
+            }
+        });
+
+        x.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        x.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        x.setText("X");
+        x.setMaximumSize(new java.awt.Dimension(19, 19));
+        x.setMinimumSize(new java.awt.Dimension(19, 19));
+        x.setPreferredSize(new java.awt.Dimension(19, 19));
+
+        javax.swing.GroupLayout btnCerrarLayout = new javax.swing.GroupLayout(btnCerrar);
+        btnCerrar.setLayout(btnCerrarLayout);
+        btnCerrarLayout.setHorizontalGroup(
+            btnCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnCerrarLayout.createSequentialGroup()
+                .addComponent(x, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
+        );
+        btnCerrarLayout.setVerticalGroup(
+            btnCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnCerrarLayout.createSequentialGroup()
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(x, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 20, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,7 +197,7 @@ public class frmPublicar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarMouseEntered
 
     private void btnCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseExited
-        btnCerrar.setBackground(new Color(240,239,239));
+        btnCerrar.setBackground(new Color(239,239,239));
     }//GEN-LAST:event_btnCerrarMouseExited
 
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked

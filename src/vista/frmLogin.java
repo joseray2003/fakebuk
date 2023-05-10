@@ -233,21 +233,15 @@ public class frmLogin extends javax.swing.JFrame {
         pnlSalir.setLayout(pnlSalirLayout);
         pnlSalirLayout.setHorizontalGroup(
             pnlSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-            .addGroup(pnlSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlSalirLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSalirLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlSalirLayout.setVerticalGroup(
             pnlSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-            .addGroup(pnlSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlSalirLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSalirLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         bg.add(pnlSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 120, 40));
@@ -379,11 +373,16 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirMouseEntered
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
-        int opcion = JOptionPane.showConfirmDialog(null, "¿Seguro que deseas salir?", "FakeBuk", JOptionPane.YES_NO_OPTION);
+       
+        frmPreguntaSalir pr = new frmPreguntaSalir();
+        pr.setVisible(true);
+        
+        /* int opcion = JOptionPane.showConfirmDialog(null, "¿Seguro que deseas salir?", "FakeBuk", JOptionPane.YES_NO_OPTION);
         if(opcion != 1){
             System.exit(0);
             return;
         }
+        */
     }//GEN-LAST:event_btnSalirMouseClicked
 
     public static void main(String args[]) {

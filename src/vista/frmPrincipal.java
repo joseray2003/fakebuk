@@ -5,9 +5,12 @@
  */
 package vista;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
@@ -24,8 +27,24 @@ public class frmPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
+        
          Image icon = new ImageIcon(getClass().getResource("/img/soloLogo.png")).getImage();
        this.setIconImage(icon); 
+    }
+    
+     private void InitContent(){
+    ShowJPanel(new frmPerfil());
+    }
+    
+    private void ShowJPanel(JPanel p){
+    p.setSize(1038, 723);
+    p.setLocation(0,0);
+    
+        pnlPrincipal.removeAll();
+        pnlPrincipal.add(p, BorderLayout.CENTER);
+        pnlPrincipal.revalidate();
+        pnlPrincipal.repaint();
+        
     }
 
     /**
@@ -53,23 +72,39 @@ public class frmPrincipal extends javax.swing.JFrame {
         PerfilUsuario = new javax.swing.JPanel();
         Separador = new javax.swing.JLabel();
         lblFotoPerfil = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         Recomendados = new javax.swing.JPanel();
+        UsuariosFakeVerso = new javax.swing.JLabel();
+        PerfilUno = new javax.swing.JPanel();
+        FotoPerfilUno = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        PerfilTres = new javax.swing.JPanel();
+        FotoPerfilTres = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        ScrollPane = new javax.swing.JScrollPane();
+        PerfilCuatro = new javax.swing.JPanel();
+        FotoPerfilCuatro = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        PerfilDos = new javax.swing.JPanel();
+        FotoPerfilDos = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         PanelCrearPublicacion = new javax.swing.JPanel();
         EnQueEstasPensando = new javax.swing.JLabel();
-        btnPublicar = new Clases.PanelRound();
+        btnPublicar = new javax.swing.JPanel();
         btnEntrar = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        pnlPrincipal = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -162,6 +197,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/actualizar.png"))); // NOI18N
 
         javax.swing.GroupLayout btnActualizarLayout = new javax.swing.GroupLayout(btnActualizar);
@@ -252,6 +288,36 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblFotoPerfil.setToolTipText("");
         lblFotoPerfil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel7.setText("Nombre:");
+
+        jLabel8.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel8.setText("Correo:");
+
+        jLabel14.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel14.setText("Telefono:");
+
+        jLabel15.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel15.setText("Ciudad:");
+
+        jLabel16.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel16.setText("Asiste a:");
+
+        jLabel17.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel17.setText("eric jasiel carballo.");
+
+        jLabel18.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel18.setText("ericjasiel20@gmail.com");
+
+        jLabel19.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel19.setText("+52 6421474302");
+
+        jLabel20.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel20.setText("Navojoa.");
+
+        jLabel21.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel21.setText("ITSON Navojoa.");
+
         javax.swing.GroupLayout PerfilUsuarioLayout = new javax.swing.GroupLayout(PerfilUsuario);
         PerfilUsuario.setLayout(PerfilUsuarioLayout);
         PerfilUsuarioLayout.setHorizontalGroup(
@@ -260,8 +326,33 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addComponent(Separador)
                 .addGap(0, 2, Short.MAX_VALUE))
             .addGroup(PerfilUsuarioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblFotoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PerfilUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PerfilUsuarioLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(lblFotoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PerfilUsuarioLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(PerfilUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PerfilUsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PerfilUsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PerfilUsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PerfilUsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PerfilUsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PerfilUsuarioLayout.setVerticalGroup(
@@ -269,7 +360,27 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblFotoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addGroup(PerfilUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel17))
+                .addGap(18, 18, 18)
+                .addGroup(PerfilUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel18))
+                .addGap(18, 18, 18)
+                .addGroup(PerfilUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel19))
+                .addGap(18, 18, 18)
+                .addGroup(PerfilUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel20))
+                .addGap(18, 18, 18)
+                .addGroup(PerfilUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(Separador))
         );
 
@@ -277,148 +388,141 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         Recomendados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel6.setText("Amigos:");
-        Recomendados.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 11, 129, -1));
+        UsuariosFakeVerso.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        UsuariosFakeVerso.setText("Usuarios en el FakeVerso:");
+        Recomendados.add(UsuariosFakeVerso, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 11, 190, -1));
 
-        jPanel1.setBackground(new java.awt.Color(225, 225, 225));
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PerfilUno.setBackground(new java.awt.Color(225, 225, 225));
+        PerfilUno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PerfilUno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PerfilUnoMouseClicked(evt);
+            }
+        });
 
-        jLabel9.setText("Foto perfil");
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        FotoPerfilUno.setText("Foto perfil");
+        FotoPerfilUno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 170, Short.MAX_VALUE))
+        jLabel6.setText("jLabel6");
+
+        javax.swing.GroupLayout PerfilUnoLayout = new javax.swing.GroupLayout(PerfilUno);
+        PerfilUno.setLayout(PerfilUnoLayout);
+        PerfilUnoLayout.setHorizontalGroup(
+            PerfilUnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PerfilUnoLayout.createSequentialGroup()
+                .addComponent(FotoPerfilUno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(jLabel6)
+                .addGap(0, 86, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        PerfilUnoLayout.setVerticalGroup(
+            PerfilUnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilUnoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PerfilUnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FotoPerfilUno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)))
         );
 
-        Recomendados.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 240, 70));
+        Recomendados.add(PerfilUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 240, 70));
 
-        jPanel4.setBackground(new java.awt.Color(225, 225, 225));
-        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PerfilTres.setBackground(new java.awt.Color(225, 225, 225));
+        PerfilTres.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel11.setText("Foto perfil");
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        FotoPerfilTres.setText("Foto perfil");
+        FotoPerfilTres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 170, Short.MAX_VALUE))
+        jLabel10.setText("jLabel10");
+
+        javax.swing.GroupLayout PerfilTresLayout = new javax.swing.GroupLayout(PerfilTres);
+        PerfilTres.setLayout(PerfilTresLayout);
+        PerfilTresLayout.setHorizontalGroup(
+            PerfilTresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PerfilTresLayout.createSequentialGroup()
+                .addComponent(FotoPerfilTres, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel10)
+                .addGap(0, 88, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        PerfilTresLayout.setVerticalGroup(
+            PerfilTresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilTresLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PerfilTresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FotoPerfilTres, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)))
         );
 
-        Recomendados.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 240, 70));
+        Recomendados.add(PerfilTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 240, 70));
 
-        jPanel5.setBackground(new java.awt.Color(225, 225, 225));
-        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PerfilCuatro.setBackground(new java.awt.Color(225, 225, 225));
+        PerfilCuatro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel12.setText("Foto perfil");
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        FotoPerfilCuatro.setText("Foto perfil");
+        FotoPerfilCuatro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 170, Short.MAX_VALUE))
+        jLabel11.setText("jLabel11");
+
+        javax.swing.GroupLayout PerfilCuatroLayout = new javax.swing.GroupLayout(PerfilCuatro);
+        PerfilCuatro.setLayout(PerfilCuatroLayout);
+        PerfilCuatroLayout.setHorizontalGroup(
+            PerfilCuatroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PerfilCuatroLayout.createSequentialGroup()
+                .addComponent(FotoPerfilCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel11)
+                .addGap(0, 87, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        PerfilCuatroLayout.setVerticalGroup(
+            PerfilCuatroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilCuatroLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PerfilCuatroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FotoPerfilCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)))
         );
 
-        Recomendados.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, 70));
+        Recomendados.add(PerfilCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 70));
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PerfilDos.setBackground(new java.awt.Color(225, 225, 225));
+        PerfilDos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel10.setText("Foto perfil");
-        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        FotoPerfilDos.setText("Foto perfil");
+        FotoPerfilDos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 170, Short.MAX_VALUE))
+        jLabel9.setText("jLabel9");
+
+        javax.swing.GroupLayout PerfilDosLayout = new javax.swing.GroupLayout(PerfilDos);
+        PerfilDos.setLayout(PerfilDosLayout);
+        PerfilDosLayout.setHorizontalGroup(
+            PerfilDosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PerfilDosLayout.createSequentialGroup()
+                .addComponent(FotoPerfilDos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jLabel9)
+                .addGap(0, 90, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+        PerfilDosLayout.setVerticalGroup(
+            PerfilDosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilDosLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PerfilDosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FotoPerfilDos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)))
         );
 
-        Recomendados.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 240, 70));
-
-        jPanel7.setBackground(new java.awt.Color(225, 225, 225));
-        jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel13.setText("Foto perfil");
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 170, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        Recomendados.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 240, 70));
+        Recomendados.add(PerfilDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 240, 70));
 
         bg.add(Recomendados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 290, 380));
-
-        ScrollPane.setBackground(new java.awt.Color(255, 255, 255));
-        bg.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 940, 700));
 
         PanelCrearPublicacion.setBackground(new java.awt.Color(255, 255, 255));
         PanelCrearPublicacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EnQueEstasPensando.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         EnQueEstasPensando.setText("¿En que estas pensando?");
-        PanelCrearPublicacion.add(EnQueEstasPensando, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 12, -1, -1));
+        PanelCrearPublicacion.add(EnQueEstasPensando, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 12, 170, -1));
 
         btnPublicar.setBackground(new java.awt.Color(82, 120, 206));
-        btnPublicar.setRoundBottomLeft(15);
-        btnPublicar.setRoundBottomRight(15);
-        btnPublicar.setRoundTopLeft(15);
-        btnPublicar.setRoundTopRight(15);
-        btnPublicar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPublicarMouseClicked(evt);
-            }
-        });
-        btnPublicar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEntrar.setFont(new java.awt.Font("Sans Serif Collection", 1, 14)); // NOI18N
         btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -436,11 +540,70 @@ public class frmPrincipal extends javax.swing.JFrame {
                 btnEntrarMouseExited(evt);
             }
         });
-        btnPublicar.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 20));
 
-        PanelCrearPublicacion.add(btnPublicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 110, 20));
+        javax.swing.GroupLayout btnPublicarLayout = new javax.swing.GroupLayout(btnPublicar);
+        btnPublicar.setLayout(btnPublicarLayout);
+        btnPublicarLayout.setHorizontalGroup(
+            btnPublicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 170, Short.MAX_VALUE)
+            .addGroup(btnPublicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(btnPublicarLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        btnPublicarLayout.setVerticalGroup(
+            btnPublicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+            .addGroup(btnPublicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(btnPublicarLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        PanelCrearPublicacion.add(btnPublicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 170, 20));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/emojis.png"))); // NOI18N
+        PanelCrearPublicacion.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 2, 310, 40));
 
         bg.add(PanelCrearPublicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 940, 40));
+
+        jScrollPane1.setHorizontalScrollBar(null);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
+        pnlPrincipal.setLayout(pnlPrincipalLayout);
+        pnlPrincipalLayout.setHorizontalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        pnlPrincipalLayout.setVerticalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(753, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(pnlPrincipal);
+
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 72, 940, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -484,7 +647,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_CloseMouseReleased
 
     private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
-        System.exit(0);
+        frmPreguntaSalir pr = new frmPreguntaSalir();
+        pr.setVisible(true);
     }//GEN-LAST:event_CloseMouseClicked
 
     private void TamañoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TamañoMouseClicked
@@ -541,9 +705,9 @@ frmPublicar pub = new frmPublicar();
         btnPublicar.setBackground(new Color(82,120,206));
     }//GEN-LAST:event_btnEntrarMouseExited
 
-    private void btnPublicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicarMouseClicked
-        
-    }//GEN-LAST:event_btnPublicarMouseClicked
+    private void PerfilUnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilUnoMouseClicked
+        ShowJPanel(new frmPerfil());
+    }//GEN-LAST:event_PerfilUnoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -556,7 +720,7 @@ frmPublicar pub = new frmPublicar();
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -584,35 +748,51 @@ frmPublicar pub = new frmPublicar();
     private javax.swing.JPanel Barra;
     private javax.swing.JPanel Close;
     private javax.swing.JLabel EnQueEstasPensando;
+    private javax.swing.JLabel FotoPerfilCuatro;
+    private javax.swing.JLabel FotoPerfilDos;
+    private javax.swing.JLabel FotoPerfilTres;
+    private javax.swing.JLabel FotoPerfilUno;
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel Lupa;
     private javax.swing.JPanel PanelCrearPublicacion;
+    private javax.swing.JPanel PerfilCuatro;
+    private javax.swing.JPanel PerfilDos;
+    private javax.swing.JPanel PerfilTres;
+    private javax.swing.JPanel PerfilUno;
     private javax.swing.JPanel PerfilUsuario;
     private javax.swing.JPanel Recomendados;
-    private javax.swing.JScrollPane ScrollPane;
     private javax.swing.JLabel Separador;
     private javax.swing.JPanel Tamaño;
+    private javax.swing.JLabel UsuariosFakeVerso;
     private javax.swing.JPanel bg;
     private javax.swing.JPanel btnActualizar;
     private javax.swing.JPanel btnBuscar;
     private javax.swing.JLabel btnEntrar;
-    private Clases.PanelRound btnPublicar;
+    private javax.swing.JPanel btnPublicar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblFotoPerfil;
+    private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
