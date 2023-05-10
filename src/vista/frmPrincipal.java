@@ -26,18 +26,18 @@ public class frmPrincipal extends javax.swing.JFrame {
     public frmPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        
+        ShowJPanel(new frmMural());
+        lblAtras.setVisible(false);
          Image icon = new ImageIcon(getClass().getResource("/img/soloLogo.png")).getImage();
        this.setIconImage(icon); 
+       pnlPrincipal.setSize(1000, 3300);
     }
-    
      private void InitContent(){
-    ShowJPanel(new frmPerfil());
+    ShowJPanel(new frmMural());
     }
     
     private void ShowJPanel(JPanel p){
-    p.setSize(1038, 723);
+    p.setSize(1038, 3500);
     p.setLocation(0,0);
     
         pnlPrincipal.removeAll();
@@ -46,6 +46,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlPrincipal.repaint();
         
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -100,13 +102,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         EnQueEstasPensando = new javax.swing.JLabel();
         btnPublicar = new javax.swing.JPanel();
         btnEntrar = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        Emojis = new javax.swing.JLabel();
+        pnlAtras = new javax.swing.JPanel();
+        lblAtras = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         pnlPrincipal = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fakebuk");
         setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
@@ -398,6 +401,12 @@ public class frmPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PerfilUnoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                PerfilUnoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PerfilUnoMouseExited(evt);
+            }
         });
 
         FotoPerfilUno.setText("Foto perfil");
@@ -428,6 +437,17 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         PerfilTres.setBackground(new java.awt.Color(225, 225, 225));
         PerfilTres.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PerfilTres.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PerfilTresMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                PerfilTresMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PerfilTresMouseExited(evt);
+            }
+        });
 
         FotoPerfilTres.setText("Foto perfil");
         FotoPerfilTres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -457,6 +477,17 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         PerfilCuatro.setBackground(new java.awt.Color(225, 225, 225));
         PerfilCuatro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PerfilCuatro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PerfilCuatroMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                PerfilCuatroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PerfilCuatroMouseExited(evt);
+            }
+        });
 
         FotoPerfilCuatro.setText("Foto perfil");
         FotoPerfilCuatro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -486,6 +517,17 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         PerfilDos.setBackground(new java.awt.Color(225, 225, 225));
         PerfilDos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PerfilDos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PerfilDosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                PerfilDosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PerfilDosMouseExited(evt);
+            }
+        });
 
         FotoPerfilDos.setText("Foto perfil");
         FotoPerfilDos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -545,60 +587,75 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnPublicar.setLayout(btnPublicarLayout);
         btnPublicarLayout.setHorizontalGroup(
             btnPublicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-            .addGroup(btnPublicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(btnPublicarLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(btnPublicarLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         btnPublicarLayout.setVerticalGroup(
             btnPublicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-            .addGroup(btnPublicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(btnPublicarLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPublicarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         PanelCrearPublicacion.add(btnPublicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 170, 20));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/emojis.png"))); // NOI18N
-        PanelCrearPublicacion.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 2, 310, 40));
+        Emojis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/emojis.png"))); // NOI18N
+        PanelCrearPublicacion.add(Emojis, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 310, 40));
+
+        pnlAtras.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlAtrasMouseExited(evt);
+            }
+        });
+
+        lblAtras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Atras.png"))); // NOI18N
+        lblAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAtrasMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblAtrasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblAtrasMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlAtrasLayout = new javax.swing.GroupLayout(pnlAtras);
+        pnlAtras.setLayout(pnlAtrasLayout);
+        pnlAtrasLayout.setHorizontalGroup(
+            pnlAtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAtrasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblAtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlAtrasLayout.setVerticalGroup(
+            pnlAtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblAtras, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        PanelCrearPublicacion.add(pnlAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
 
         bg.add(PanelCrearPublicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 940, 40));
 
         jScrollPane1.setHorizontalScrollBar(null);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
-
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
         pnlPrincipalLayout.setHorizontalGroup(
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+            .addGap(0, 929, Short.MAX_VALUE)
         );
         pnlPrincipalLayout.setVerticalGroup(
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(753, Short.MAX_VALUE))
+            .addGap(0, 1349, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(pnlPrincipal);
@@ -692,7 +749,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarMouseExited
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
-frmPublicar pub = new frmPublicar();
+    frmPublicar pub = new frmPublicar();
         pub.setVisible(true);
 
     }//GEN-LAST:event_btnEntrarMouseClicked
@@ -706,8 +763,73 @@ frmPublicar pub = new frmPublicar();
     }//GEN-LAST:event_btnEntrarMouseExited
 
     private void PerfilUnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilUnoMouseClicked
-        ShowJPanel(new frmPerfil());
+ShowJPanel(new frmPerfil());  
+lblAtras.setVisible(true);
     }//GEN-LAST:event_PerfilUnoMouseClicked
+
+    private void PerfilUnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilUnoMouseEntered
+        PerfilUno.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_PerfilUnoMouseEntered
+
+    private void PerfilUnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilUnoMouseExited
+        PerfilUno.setBackground(new Color(225,225,225));
+    }//GEN-LAST:event_PerfilUnoMouseExited
+
+    private void pnlAtrasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAtrasMouseExited
+       
+    }//GEN-LAST:event_pnlAtrasMouseExited
+
+    private void lblAtrasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtrasMouseExited
+        pnlAtras.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_lblAtrasMouseExited
+
+    private void lblAtrasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtrasMouseEntered
+        pnlAtras.setBackground(new Color(240,240,240));
+    }//GEN-LAST:event_lblAtrasMouseEntered
+
+    private void PerfilDosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilDosMouseEntered
+        PerfilDos.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_PerfilDosMouseEntered
+
+    private void PerfilTresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilTresMouseEntered
+        PerfilTres.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_PerfilTresMouseEntered
+
+    private void PerfilCuatroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilCuatroMouseEntered
+        PerfilCuatro.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_PerfilCuatroMouseEntered
+
+    private void PerfilDosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilDosMouseExited
+        PerfilDos.setBackground(new Color(225,225,225));
+    }//GEN-LAST:event_PerfilDosMouseExited
+
+    private void PerfilTresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilTresMouseExited
+        PerfilTres.setBackground(new Color(225,225,225));
+    }//GEN-LAST:event_PerfilTresMouseExited
+
+    private void PerfilCuatroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilCuatroMouseExited
+        PerfilCuatro.setBackground(new Color(225,225,225));
+    }//GEN-LAST:event_PerfilCuatroMouseExited
+
+    private void PerfilDosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilDosMouseClicked
+        ShowJPanel(new frmPerfil());
+        lblAtras.setVisible(true);
+    }//GEN-LAST:event_PerfilDosMouseClicked
+
+    private void PerfilTresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilTresMouseClicked
+       ShowJPanel(new frmPerfil());
+       lblAtras.setVisible(true);
+    }//GEN-LAST:event_PerfilTresMouseClicked
+
+    private void PerfilCuatroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilCuatroMouseClicked
+        ShowJPanel(new frmPerfil());
+        lblAtras.setVisible(true);
+    }//GEN-LAST:event_PerfilCuatroMouseClicked
+
+    private void lblAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtrasMouseClicked
+        ShowJPanel(new frmMural());
+        lblAtras.setVisible(false);
+    }//GEN-LAST:event_lblAtrasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -747,6 +869,7 @@ frmPublicar pub = new frmPublicar();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Barra;
     private javax.swing.JPanel Close;
+    private javax.swing.JLabel Emojis;
     private javax.swing.JLabel EnQueEstasPensando;
     private javax.swing.JLabel FotoPerfilCuatro;
     private javax.swing.JLabel FotoPerfilDos;
@@ -783,15 +906,14 @@ frmPublicar pub = new frmPublicar();
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblAtras;
     private javax.swing.JLabel lblFotoPerfil;
+    private javax.swing.JPanel pnlAtras;
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables

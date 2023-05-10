@@ -63,14 +63,14 @@ public class frmPreguntaSalir extends javax.swing.JFrame {
         pnlArrastrable.setLayout(pnlArrastrableLayout);
         pnlArrastrableLayout.setHorizontalGroup(
             pnlArrastrableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         pnlArrastrableLayout.setVerticalGroup(
             pnlArrastrableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        pnlPrincipal.add(pnlArrastrable, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlPrincipal.add(pnlArrastrable, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel1.setText("¿Segur@ que deseas salir?");

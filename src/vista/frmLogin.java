@@ -23,7 +23,7 @@ public class frmLogin extends javax.swing.JFrame {
         setTitle("FakëBuk");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/soloLogo.png")));
         img();
-    }    
+    }
     
     public void img(){
         ImageIcon iconLogo = new ImageIcon(getClass().getResource("/img/logoFakeBuk.png"));

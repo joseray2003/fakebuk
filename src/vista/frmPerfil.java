@@ -6,6 +6,9 @@
 package vista;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -19,8 +22,15 @@ public class frmPerfil extends javax.swing.JPanel {
      */
     public frmPerfil() {
         initComponents();
+        setSize(1000, 1000);
+       // img();
     }
-
+    /*
+    public void img(){
+        ImageIcon iconLogo = new ImageIcon(getClass().getResource("/img/pfpLuis.jpg"));
+        Image fotoLogo = iconLogo.getImage().getScaledInstance(lblFotoPerfil.getWidth(), lblFotoPerfil.getHeight(), 0);
+        lblFotoPerfil.setIcon(new ImageIcon(fotoLogo));
+    }*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,50 +40,124 @@ public class frmPerfil extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblFotoPerfil = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblAmigos = new javax.swing.JLabel();
+        pnlAñadir = new javax.swing.JPanel();
+        lblAñadir = new javax.swing.JLabel();
+        lblCiudad = new javax.swing.JLabel();
+        lblCarrera = new javax.swing.JLabel();
+        pnlPublicacion = new javax.swing.JPanel();
+        lblPublicacion = new javax.swing.JLabel();
+        lblInfo = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(940, 700));
+        setMinimumSize(new java.awt.Dimension(1000, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        lblFotoPerfil.setText("Foto perfil");
+        lblFotoPerfil.setAlignmentX(2.0F);
+        lblFotoPerfil.setAlignmentY(2.0F);
+        lblFotoPerfil.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        add(lblFotoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 160, 160));
+
+        lblNombre.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        lblNombre.setText("*Nombre de la persona*");
+        add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
+
+        lblAmigos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblAmigos.setText("*Cantidad de amigos*");
+        add(lblAmigos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 200, 30));
+
+        pnlAñadir.setBackground(new java.awt.Color(82, 120, 206));
+        pnlAñadir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlAñadir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlAñadirMouseEntered(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
-
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel1MouseClicked(evt);
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlAñadirMouseExited(evt);
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda (1).png"))); // NOI18N
-        jPanel1.add(jLabel1);
+        lblAñadir.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblAñadir.setForeground(new java.awt.Color(255, 255, 255));
+        lblAñadir.setText("Añadir amigo");
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+        javax.swing.GroupLayout pnlAñadirLayout = new javax.swing.GroupLayout(pnlAñadir);
+        pnlAñadir.setLayout(pnlAñadirLayout);
+        pnlAñadirLayout.setHorizontalGroup(
+            pnlAñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAñadirLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(lblAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        pnlAñadirLayout.setVerticalGroup(
+            pnlAñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAñadirLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblAñadir)
+                .addContainerGap())
+        );
+
+        add(pnlAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 50, 150, 40));
+
+        lblCiudad.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblCiudad.setText("De: *Ciudad*");
+        add(lblCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        lblCarrera.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblCarrera.setText("Se dedica a:");
+        add(lblCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+
+        pnlPublicacion.setBackground(new java.awt.Color(224, 224, 224));
+
+        lblPublicacion.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblPublicacion.setText("*Publicacion de esta persona*");
+
+        javax.swing.GroupLayout pnlPublicacionLayout = new javax.swing.GroupLayout(pnlPublicacion);
+        pnlPublicacion.setLayout(pnlPublicacionLayout);
+        pnlPublicacionLayout.setHorizontalGroup(
+            pnlPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPublicacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPublicacion)
+                .addContainerGap(481, Short.MAX_VALUE))
+        );
+        pnlPublicacionLayout.setVerticalGroup(
+            pnlPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPublicacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPublicacion)
+                .addContainerGap(210, Short.MAX_VALUE))
+        );
+
+        add(pnlPublicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 680, 240));
+
+        lblInfo.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblInfo.setText("Ultima publicacion:");
+        add(lblInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 140, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-        this.setVisible(false);
-    }//GEN-LAST:event_jPanel1MouseClicked
+    private void pnlAñadirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAñadirMouseEntered
+        pnlAñadir.setBackground(new Color(62,143,80));
+    }//GEN-LAST:event_pnlAñadirMouseEntered
+
+    private void pnlAñadirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlAñadirMouseExited
+        pnlAñadir.setBackground(new Color(82,120,206));
+    }//GEN-LAST:event_pnlAñadirMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblAmigos;
+    private javax.swing.JLabel lblAñadir;
+    private javax.swing.JLabel lblCarrera;
+    private javax.swing.JLabel lblCiudad;
+    private javax.swing.JLabel lblFotoPerfil;
+    private javax.swing.JLabel lblInfo;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblPublicacion;
+    private javax.swing.JPanel pnlAñadir;
+    private javax.swing.JPanel pnlPublicacion;
     // End of variables declaration//GEN-END:variables
 }
