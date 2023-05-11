@@ -77,10 +77,19 @@ public class conexion {
     
     //      BASE DE DATOS DE USUARIO
     
+    public List<Document> listarUsuarios(){
+        MongoClient mongo = conexion();
+        MongoDatabase db = mongo.getDatabase("fakebook");
+        MongoCollection<Document> tabla = db.getCollection("usuarios");
+        List<Document> libros = tabla.find().into(new ArrayList<Document>());
+        return libros;
+        
+    }
+    
     public List<Document> listarFiltro(Document dbo){
         MongoClient mongo = conexion();
         MongoDatabase db = mongo.getDatabase("fakebook");
-        MongoCollection<Document> collec = db.getCollection("usuario");
+        MongoCollection<Document> collec = db.getCollection("usuarios");
         List<Document> usuario = collec.find(dbo).into(new ArrayList<Document>());
         return usuario;
     }
@@ -90,12 +99,27 @@ public class conexion {
             MongoClient mongo = conexion();
             MongoDatabase db = mongo.getDatabase("fakebook");
             MongoCollection<Document> collec = db.getCollection("usuario");
-            Document query = new Document("email", email).append("password", password);
+            Document query = new Document("correo", email).append("password", password);
             collec.find(query).first();
         }catch(Exception ex){
             System.out.println("ERROR: " + ex.getMessage());
             return false;
         }
+        return true;
+    }
+    
+    public boolean NuevaPublicacion(Document dbo){
+        try {
+            MongoClient mongo = conexion();
+            MongoDatabase db = mongo.getDatabase("fakebook");
+            MongoCollection<Document> tabla = db.getCollection("publicaciones");
+            tabla.insertOne(dbo);
+        } catch (Exception ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "No se pudo agregar el nuevo libro");
+            return false;
+        }
+        JOptionPane.showMessageDialog(null, "Nuevo Publicación Hecha");
         return true;
     }
     

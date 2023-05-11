@@ -6,16 +6,19 @@ import control.usuarioController;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import modelo.usuarioModel;
 import org.bson.Document;
 
 public class frmLogin extends javax.swing.JFrame {
 
     int xMouse, yMouse;
-    
+
     public frmLogin() {
         initComponents();
         setSize(900, 515);
@@ -24,15 +27,21 @@ public class frmLogin extends javax.swing.JFrame {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/soloLogo.png")));
         img();
     }
-    
-    public void img(){
+
+    public void img() {
         ImageIcon iconLogo = new ImageIcon(getClass().getResource("/img/logoFakeBuk.png"));
         Image fotoLogo = iconLogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), 0);
         logo.setIcon(new ImageIcon(fotoLogo));
-        
+
         ImageIcon iconBg = new ImageIcon(getClass().getResource("/img/blueWhiteGradient.jpg"));
         Image fotoBg = iconBg.getImage().getScaledInstance(bgImg.getWidth(), bgImg.getHeight(), 0);
         bgImg.setIcon(new ImageIcon(fotoBg));
+    }
+    
+    public Image cargarImg(JLabel lbl, String ruta){
+        ImageIcon icon = new ImageIcon(getClass().getResource(ruta));
+        Image foto = icon.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), 0);
+        return foto;
     }
 
     @SuppressWarnings("unchecked")
@@ -40,6 +49,7 @@ public class frmLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
+        Arrastrable = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         label = new javax.swing.JLabel();
@@ -57,14 +67,39 @@ public class frmLogin extends javax.swing.JFrame {
         btnEntrar = new javax.swing.JLabel();
         pnlSalir = new Clases.PanelRound();
         btnSalir = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
         bgImg = new javax.swing.JLabel();
-        Arrastrable = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Arrastrable.setBackground(new java.awt.Color(255, 255, 255));
+        Arrastrable.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                ArrastrableMouseDragged(evt);
+            }
+        });
+        Arrastrable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ArrastrableMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ArrastrableLayout = new javax.swing.GroupLayout(Arrastrable);
+        Arrastrable.setLayout(ArrastrableLayout);
+        ArrastrableLayout.setHorizontalGroup(
+            ArrastrableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+        );
+        ArrastrableLayout.setVerticalGroup(
+            ArrastrableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        bg.add(Arrastrable, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 40));
 
         jPanel1.setBackground(new java.awt.Color(82, 120, 206));
 
@@ -204,7 +239,7 @@ public class frmLogin extends javax.swing.JFrame {
         });
         pnlEntrar.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 40));
 
-        bg.add(pnlEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 130, 40));
+        bg.add(pnlEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 120, 40));
 
         pnlSalir.setBackground(new java.awt.Color(82, 120, 206));
         pnlSalir.setRoundBottomLeft(15);
@@ -245,32 +280,12 @@ public class frmLogin extends javax.swing.JFrame {
         );
 
         bg.add(pnlSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 120, 40));
+
+        jCheckBox1.setFont(new java.awt.Font("Sans Serif Collection", 0, 12)); // NOI18N
+        jCheckBox1.setText("Recordarme");
+        jCheckBox1.setOpaque(false);
+        bg.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 20));
         bg.add(bgImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 480, 480));
-
-        Arrastrable.setBackground(new java.awt.Color(255, 255, 255));
-        Arrastrable.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                ArrastrableMouseDragged(evt);
-            }
-        });
-        Arrastrable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ArrastrableMousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ArrastrableLayout = new javax.swing.GroupLayout(Arrastrable);
-        Arrastrable.setLayout(ArrastrableLayout);
-        ArrastrableLayout.setHorizontalGroup(
-            ArrastrableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
-        );
-        ArrastrableLayout.setVerticalGroup(
-            ArrastrableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        bg.add(Arrastrable, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -287,28 +302,28 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCorreoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCorreoMousePressed
-          if (txtCorreo.getText().equals("Ingrese Correo")) {
+        if (txtCorreo.getText().equals("Ingrese Correo")) {
             txtCorreo.setText("");
             txtCorreo.setForeground(Color.black);
         }
         if (String.valueOf(txtPassword.getPassword()).isEmpty()) {
             txtPassword.setText("******");
             txtPassword.setForeground(Color.gray);
-            
+
         }
     }//GEN-LAST:event_txtCorreoMousePressed
 
     private void txtPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMousePressed
-         if (String.valueOf(txtPassword.getPassword()).equals("******")) {
+        if (String.valueOf(txtPassword.getPassword()).equals("******")) {
             txtPassword.setText("");
             txtPassword.setForeground(Color.black);
         }
-        
+
         if (txtCorreo.getText().isEmpty()) {
             txtCorreo.setText("Ingrese Correo");
-        txtCorreo.setForeground(Color.gray);
+            txtCorreo.setForeground(Color.gray);
         }
-        
+
     }//GEN-LAST:event_txtPasswordMousePressed
 
     private void ArrastrableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ArrastrableMousePressed
@@ -319,7 +334,7 @@ public class frmLogin extends javax.swing.JFrame {
     private void ArrastrableMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ArrastrableMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xMouse,y-yMouse);
+        this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_ArrastrableMouseDragged
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
@@ -327,11 +342,11 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void btnEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseExited
-        pnlEntrar.setBackground(new Color(82,120,206));
+        pnlEntrar.setBackground(new Color(82, 120, 206));
     }//GEN-LAST:event_btnEntrarMouseExited
 
     private void btnEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseEntered
-        pnlEntrar.setBackground(new Color(62,143,80));
+        pnlEntrar.setBackground(new Color(62, 143, 80));
     }//GEN-LAST:event_btnEntrarMouseEntered
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
@@ -351,9 +366,134 @@ public class frmLogin extends javax.swing.JFrame {
             for (Document user : usuario) {
                 usuarioModel u = gson.fromJson(user.toJson(), usuarioModel.class);
 
-                if( email.equals(u.getEmail()) && password.equals(u.getPassword()) ) {
-                    JOptionPane.showMessageDialog(null, "Bienvenido " + u.getNombre(), "Frame Principal", JOptionPane.INFORMATION_MESSAGE);
-                }else{
+                if (email.equals(u.getCorreo()) && password.equals(u.getPassword())) {
+                    frmPrincipal princ = new frmPrincipal();
+                    princ.setVisible(true);
+
+                    Image foto = cargarImg(princ.lblFotoPerfil, u.getImg());
+                    princ.lblFotoPerfil.setIcon(new ImageIcon(foto));
+                    princ.txtNombre.setText(u.getNombre() + " " + u.getApellido());
+                    princ.txtCorreo.setText(u.getCorreo());
+                    princ.txtCiudad.setText(u.getCiudad());
+                    princ.txt.setText(u.getId().toString());
+                    princ.ruta.setText(u.getImg());
+                    princ.txtEdad.setText(u.getEdad()+"");
+                    
+                    if (u.getCorreo().equals("martin@gmail.com")) {
+                        String q = "{ 'correo': 'ray@gmail.com' }";
+                        Document d = Document.parse(q);
+                        List<Document> users = UC.ListarFiltro(d);
+                        Gson g = new Gson();
+
+                        for (Document userss : users) {
+                            usuarioModel us = g.fromJson(userss.toJson(), usuarioModel.class);
+                            
+                            Image foto2 = cargarImg(princ.FotoPerfilUno, us.getImg());
+                            princ.FotoPerfilUno.setIcon(new ImageIcon(foto2));
+                            princ.txtNombreRecomendacion.setText(us.getNombre() + " " + us.getApellido());
+                            Image fotoStatus = cargarImg(princ.lblStatus, "/img/desconectado.png");
+                            princ.lblStatus.setIcon(new ImageIcon(fotoStatus));
+                            princ.rutaRecomendacion1.setText(us.getCorreo());
+                        }
+                        
+                        String qu = "{ 'correo': 'ericjasiel.11@gmail.com' }";
+                        Document doc = Document.parse(qu);
+                        List<Document> use = UC.ListarFiltro(doc);
+                        Gson gs = new Gson();
+
+                        for (Document l : use) {
+                            usuarioModel e = gs.fromJson(l.toJson(), usuarioModel.class);
+                            
+                            Image foto3 = cargarImg(princ.FotoPerfilUno2, e.getImg());
+                            princ.FotoPerfilUno2.setIcon(new ImageIcon(foto3));
+                            princ.txtNombreRecomendacion2.setText(e.getNombre() + " " + e.getApellido());
+                            Image fotoStatus = cargarImg(princ.lblStatus2, "/img/disponible.png");
+                            princ.lblStatus2.setIcon(new ImageIcon(fotoStatus));
+                            princ.rutaRecomendacion2.setText(e.getCorreo());
+                        }
+                        
+                    }else if(u.getCorreo().equals("ericjasiel.11@gmail.com")){
+                        String q = "{ 'correo': 'martin@gmail.com' }";
+                        Document d = Document.parse(q);
+                        List<Document> users = UC.ListarFiltro(d);
+                        Gson g = new Gson();
+
+                        for (Document userss : users) {
+                            usuarioModel us = g.fromJson(userss.toJson(), usuarioModel.class);
+                            
+                            Image foto2 = cargarImg(princ.FotoPerfilUno, us.getImg());
+                            princ.FotoPerfilUno.setIcon(new ImageIcon(foto2));
+                            princ.txtNombreRecomendacion.setText(us.getNombre() + " " + us.getApellido());
+                            Image fotoStatus = cargarImg(princ.lblStatus, "/img/desconectado.png");
+                            princ.lblStatus.setIcon(new ImageIcon(fotoStatus));
+                            princ.rutaRecomendacion1.setText(us.getCorreo());
+                        }
+                        
+                        String qu = "{ 'correo': 'ray@gmail.com' }";
+                        Document doc = Document.parse(qu);
+                        List<Document> use = UC.ListarFiltro(doc);
+                        Gson gs = new Gson();
+
+                        for (Document l : use) {
+                            usuarioModel e = gs.fromJson(l.toJson(), usuarioModel.class);
+                            
+                            Image foto3 = cargarImg(princ.FotoPerfilUno2, e.getImg());
+                            princ.FotoPerfilUno2.setIcon(new ImageIcon(foto3));
+                            princ.txtNombreRecomendacion2.setText(e.getNombre() + " " + e.getApellido());
+                            Image fotoStatus = cargarImg(princ.lblStatus2, "/img/disponible.png");
+                            princ.lblStatus2.setIcon(new ImageIcon(fotoStatus));
+                            princ.rutaRecomendacion2.setText(e.getCorreo());
+                        }
+                        
+                    }else if(u.getCorreo().equals("ray@gmail.com")){
+                        String q = "{ 'correo': 'ericjasiel.11@gmail.com' }";
+                        Document d = Document.parse(q);
+                        List<Document> users = UC.ListarFiltro(d);
+                        Gson g = new Gson();
+
+                        for (Document userss : users) {
+                            usuarioModel us = g.fromJson(userss.toJson(), usuarioModel.class);
+                            
+                            Image foto2 = cargarImg(princ.FotoPerfilUno, us.getImg());
+                            princ.FotoPerfilUno.setIcon(new ImageIcon(foto2));
+                            princ.txtNombreRecomendacion.setText(us.getNombre() + " " + us.getApellido());
+                            Image fotoStatus = cargarImg(princ.lblStatus, "/img/desconectado.png");
+                            princ.lblStatus.setIcon(new ImageIcon(fotoStatus));
+                            princ.rutaRecomendacion1.setText(us.getCorreo());
+                        }
+                        
+                        String qu = "{ 'correo': 'martin@gmail.com' }";
+                        Document doc = Document.parse(qu);
+                        List<Document> use = UC.ListarFiltro(doc);
+                        Gson gs = new Gson();
+
+                        for (Document l : use) {
+                            usuarioModel e = gs.fromJson(l.toJson(), usuarioModel.class);
+                            
+                            Image foto3 = cargarImg(princ.FotoPerfilUno2, e.getImg());
+                            princ.FotoPerfilUno2.setIcon(new ImageIcon(foto3));
+                            princ.txtNombreRecomendacion2.setText(e.getNombre() + " " + e.getApellido());
+                            Image fotoStatus = cargarImg(princ.lblStatus2, "/img/disponible.png");
+                            princ.lblStatus2.setIcon(new ImageIcon(fotoStatus));
+                            princ.rutaRecomendacion2.setText(e.getCorreo());
+                        }
+                        
+                    }
+                    
+//                    List<JLabel> labels = new ArrayList<>();
+//                    for (Document userss : users) {
+//                        usuarioModel us = g.fromJson(userss.toJson(), usuarioModel.class);
+//                        String nombreUsuario = us.getNombre();
+//                        JLabel labelNombre = new JLabel(nombreUsuario);
+//                        labels.add(labelNombre);
+//                    }
+//                    
+//                    for (JLabel lbs : labels) {
+//                        frmPrincipal.Recomendados.add(lbs);
+//                        frmPrincipal.Recomendados.updateUI();
+//                    }
+
+                } else {
                     JOptionPane.showMessageDialog(null, "Correo o Contraseña Incorrecto", "Error Inicio Sesión", JOptionPane.ERROR_MESSAGE);
                 }
 
@@ -365,7 +505,7 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrarMouseClicked
 
     private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
-        pnlSalir.setBackground(new Color(82,120,206));
+        pnlSalir.setBackground(new Color(82, 120, 206));
     }//GEN-LAST:event_btnSalirMouseExited
 
     private void btnSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseEntered
@@ -373,16 +513,16 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirMouseEntered
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
-       
+
         frmPreguntaSalir pr = new frmPreguntaSalir();
         pr.setVisible(true);
-        
+
         /* int opcion = JOptionPane.showConfirmDialog(null, "¿Seguro que deseas salir?", "FakeBuk", JOptionPane.YES_NO_OPTION);
         if(opcion != 1){
             System.exit(0);
             return;
         }
-        */
+         */
     }//GEN-LAST:event_btnSalirMouseClicked
 
     public static void main(String args[]) {
@@ -424,6 +564,7 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel bgImg;
     private javax.swing.JLabel btnEntrar;
     private javax.swing.JLabel btnSalir;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label2;

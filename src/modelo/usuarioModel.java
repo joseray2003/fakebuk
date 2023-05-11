@@ -5,18 +5,21 @@ public class usuarioModel {
     
     private Object _id;
     private String nombre;
+    private String apellido;
     private int edad;
-    private String email;
+    private String correo;
     private String password;
     private String ciudad;
-    private String fotoPerfil;
     private boolean activo;
+    private String img;
 
     @Override
     public String toString() {
-        return "usuarioModel{" + "_id=" + _id + ", nombre=" + nombre + ", edad=" + edad + ", email=" + email + ", password=" + password + ", ciudad=" + ciudad + ", fotoPerfil=" + fotoPerfil + ", activo=" + activo + '}';
+        return "usuarioModel{" + "_id=" + _id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", correo=" + correo + ", password=" + password + ", ciudad=" + ciudad + ", activo=" + activo + ", img=" + img + '}';
     }
 
+    
+    
     public Object getId() {
         return _id;
     }
@@ -33,6 +36,14 @@ public class usuarioModel {
         this.nombre = nombre;
     }
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
     public int getEdad() {
         return edad;
     }
@@ -41,12 +52,12 @@ public class usuarioModel {
         this.edad = edad;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getPassword() {
@@ -65,14 +76,6 @@ public class usuarioModel {
         this.ciudad = ciudad;
     }
 
-    public String getFotoPerfil() {
-        return fotoPerfil;
-    }
-
-    public void setFotoPerfil(String fotoPerfil) {
-        this.fotoPerfil = fotoPerfil;
-    }
-
     public boolean isActivo() {
         return activo;
     }
@@ -80,6 +83,16 @@ public class usuarioModel {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    
 
     
     

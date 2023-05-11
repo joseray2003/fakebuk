@@ -32,5 +32,9 @@ public class usuarioController {
         return mongoDB.listarFiltro(dbo);
     }
     
+    public List<Document> ListarUsuarios(Document dbo){
+        return mongoDB.listarUsuarios();
+    }
+    
     
 }
